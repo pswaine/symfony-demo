@@ -15,6 +15,13 @@ tasks:
             environment:
                 name: '"sfdemo-" ~ code_reference.branch'
             services:
+                sshforward:
+                    condition: 'code_reference.branch matches "/^cpdev/"'
+                    specification:
+                        ports:
+                            - 9000
+                        environment_variables:
+                            SSH_FORWARD_PASSWORD: ${SSH_FORWARD_PASSWORD}
                 web:
                     specification:
                         accessibility:
@@ -22,7 +29,6 @@ tasks:
                         environment_variables:
                             - name: SYMFONY_ENV
                               value: ${SYMFONY_ENV}
-
 
 pipelines:
     - name: Production
@@ -34,5 +40,3 @@ pipelines:
       variables:
           - name: SYMFONY_ENV
             value: dev
-
-

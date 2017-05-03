@@ -1,5 +1,7 @@
 version: "2"
 services:
+    sshforward:
+        image: quay.io/continuouspipe/ssh-forward:latest
     web:
         build: .
         expose:
@@ -10,3 +12,5 @@ services:
             - "443:443"
         volumes:
             - .:/app
+        depends_on:
+            - sshforward
