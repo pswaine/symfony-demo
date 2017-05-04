@@ -16,7 +16,6 @@ tasks:
                 name: '"sfdemo-" ~ code_reference.branch'
             services:
                 sshforward:
-                    condition: 'code_reference.branch matches "/^cpdev/"'
                     specification:
                         ports:
                             - 9000
@@ -32,10 +31,10 @@ tasks:
 
 pipelines:
     - name: Production
-      condition: 'not(code_reference.branch matches "/^cpdev/")'
+      condition: condition: 'code_reference.branch matches "/master/"'
       tasks: [ images, deployment ]
     - name: Remote
-      condition: 'code_reference.branch matches "/^cpdev/"'
+      condition: 'code_reference.branch matches "/^feature/"'
       tasks: [ images, deployment ]
       variables:
           - name: SYMFONY_ENV
