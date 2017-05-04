@@ -31,7 +31,7 @@ tasks:
 
 pipelines:
     - name: Production
-      condition: condition: 'code_reference.branch matches "/master/"'
+      condition: 'code_reference.branch matches "/master/"'
       tasks: [ images, deployment ]
     - name: Remote
       condition: 'code_reference.branch matches "/^feature/"'
