@@ -38,4 +38,4 @@ pipelines:
       tasks: [ images, deployment ]
       variables:
           - name: SYMFONY_ENV
-            value: dev
+            value: prod
