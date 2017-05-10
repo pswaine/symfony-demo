@@ -8,7 +8,7 @@ RUN apt-get update -qq -y \
     && apt-get auto-remove -qq -y \
     && apt-get clean
 
-
+COPY docker/etc/ /etc/
 
 COPY . /app
 RUN container build
