@@ -1,4 +1,4 @@
-{{ if eq getenv "XDEBUG_REMOTE_ENABLED" "" }}
+{{ if getenv "XDEBUG_REMOTE_ENABLED" eq "" }}
 ; Configuration for Tideways Profiler Extension
 ; priority=40
 extension=tideways.so
