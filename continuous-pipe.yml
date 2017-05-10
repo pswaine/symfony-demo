@@ -1,6 +1,12 @@
 variables:
     - name: SYMFONY_ENV
       value: prod
+    - name: XDEBUG_REMOTE_ENABLED
+      value: 0
+    - name: XDEBUG_REMOTE_HOST
+      value: sshforward
+    - name: XDEBUG_REMOTE_PORT
+      value: 9000
 
 tasks:
     images:
@@ -29,6 +35,8 @@ tasks:
                         environment_variables:
                             - name: SYMFONY_ENV
                               value: ${SYMFONY_ENV}
+                            - name: XDEBUG_REMOTE_ENABLED
+                              value: ${XDEBUG_REMOTE_ENABLED}
 
 pipelines:
   - name: Production
@@ -43,3 +51,5 @@ pipelines:
     variables:
       - name: SYMFONY_ENV
         value: prod
+      - name: XDEBUG_REMOTE_ENABLED
+        value: 1
