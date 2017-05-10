@@ -1,0 +1,6 @@
+[template]
+src   = "php-fpm/xdebug.conf.tmpl"
+dest  = "/etc/php/7.1/fpm/conf.d/20-xdebug.ini"
+mode  = "0644"
+keys = [
+]
