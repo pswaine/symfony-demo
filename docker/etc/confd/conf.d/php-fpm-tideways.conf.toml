@@ -1,0 +1,6 @@
+[template]
+src   = "php-fpm/tideways.conf.tmpl"
+dest  = "/etc/php/7.1/fpm/conf.d/40-tideways.ini"
+mode  = "0644"
+keys = [
+]
