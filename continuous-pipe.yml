@@ -37,6 +37,10 @@ tasks:
                               value: ${SYMFONY_ENV}
                             - name: XDEBUG_REMOTE_ENABLED
                               value: ${XDEBUG_REMOTE_ENABLED}
+                            - name: XDEBUG_REMOTE_HOST
+                              value: ${XDEBUG_REMOTE_HOST}
+                            - name: XDEBUG_REMOTE_PORT
+                              value: ${XDEBUG_REMOTE_PORT}
 
 pipelines:
   - name: Production
